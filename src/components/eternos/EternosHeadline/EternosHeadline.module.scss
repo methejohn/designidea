@@ -1,0 +1,61 @@
+@use '/src/styles/util/mixin' as *;
+
+.groupTop {
+  margin-top: 8.33rem;
+  @include vw(margin-left, 100px);
+  @include vw(margin-right, 100px);
+  display: flex;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  @include mobile {
+    margin: unset;
+    margin-top: 5.33rem;
+    flex-direction: column;
+    border: 0;
+  }
+  .headlineArea {
+    padding-top: 8.33rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    @include mobile {
+      padding: unset;
+      padding-bottom: 4rem;
+    }
+    h2 {
+      @include mobile {
+        font-size: 4.66rem;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 12.166rem;
+        height: 100%;
+        width: 1px;
+        background: #000;
+        @include mobile {
+          width: 100%;
+          height: 1px;
+          top: unset;
+          right: unset;
+          left: 0;
+          bottom: 0;
+        }
+      }
+    }
+  }
+  ul {
+    padding: 8.33rem 7.25rem 6.42rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.08rem 3.58rem;
+    flex: 1;
+    @include mobile {
+      padding: 4rem 0 0;
+      grid-template-columns: 1fr;
+      gap: 2.66rem;
+    }
+  }
+}

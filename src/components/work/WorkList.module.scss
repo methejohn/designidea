@@ -1,0 +1,80 @@
+@use '/src/styles/util/mixin' as *;
+
+.groupWork {
+  display: flex;
+  flex-direction: column;
+  gap: 4.16rem;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+
+  @include vw(margin-left, 100px);
+  @include vw(margin-right, 100px);
+  padding: 8.33rem 0;
+  @include mobile {
+    margin: 0 2.66rem;
+    padding: 2.66rem 0;
+    gap: 2.66rem;
+  }
+  .headlineArea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .linkMore {
+      padding: 1.08rem 2.83rem;
+      background: #f55601;
+      border-radius: 0.83rem;
+      font-size: 1.66rem;
+      font-weight: 500;
+      color: #fff;
+      @include mobile {
+        padding: 1rem 1.66rem;
+        font-size: 2.66rem;
+      }
+    }
+  }
+  .workList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.58rem 3rem;
+    align-items: flex-start;
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 2.66rem;
+    }
+  }
+  &:global(.work) {
+    padding-top: 10.19rem;
+    border: unset;
+    @include mobile {
+      padding-top: 5rem;
+      gap: 3rem;
+    }
+    .workList {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5.41rem 3rem;
+      @include mobile {
+        grid-template-columns: 1fr;
+        gap: 2.66rem;
+      }
+    }
+    .tabList {
+      display: flex;
+      font-size: 2.08rem;
+      gap: 4rem;
+      @include mobile {
+        gap: unset;
+        font-size: 2.66rem;
+        font-weight: 600;
+        justify-content: space-between;
+        li {
+          padding: 1.33rem;
+          button {
+            &:global(.active) {
+              color: #f55601;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@use '/src/styles/util/mixin' as *;
+
+.serviceItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.66rem;
+  .title {
+    font-size: 2.91rem;
+    font-weight: 600;
+    @include mobile {
+      font-size: 3rem;
+    }
+  }
+  ul {
+    li {
+      font-size: 1.66rem;
+      display: flex;
+      gap: 0.5rem;
+      line-height: 1.5;
+      @include mobile {
+        font-size: 2.33rem;
+        line-height: 1.4;
+      }
+      &::before {
+        content: '•';
+      }
+    }
+  }
+}

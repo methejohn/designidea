@@ -1,0 +1,114 @@
+@use '../util/mixin' as *;
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  margin: -1px;
+}
+.headline {
+  font-size: 5rem;
+  font-weight: 700;
+  @include mobile {
+    font-size: 5.33rem;
+  }
+}
+
+// gnb 메뉴
+.gnb {
+  display: flex;
+  justify-content: center;
+  font-size: 2.58rem;
+  font-weight: 600;
+  @include mobile {
+    visibility: hidden;
+    position: absolute;
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 8.33rem;
+    color: #fff;
+    transition: color 0.5s;
+    li {
+      a {
+        svg {
+          width: 4.08rem;
+          height: auto;
+          path {
+            transition: fill 0.5s;
+            fill: #fff;
+          }
+        }
+        &.active {
+          color: #f55601;
+        }
+      }
+    }
+  }
+}
+
+// gnb 모바일 메뉴
+.mobile {
+  .gnb {
+    display: unset;
+    visibility: visible;
+    z-index: -1;
+    background: #000;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 14.65rem 2.66rem 0;
+    font-size: 4.66rem;
+    ul {
+      flex-direction: column;
+      gap: 4rem;
+      align-items: unset;
+      li {
+        svg {
+          width: 6.73rem;
+        }
+        &:last-child {
+          padding-top: 4rem;
+          border-top: 1px solid #fff;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  section {
+    padding-top: 7.016rem;
+  }
+  .sc-main {
+    position: relative;
+    padding-top: 0;
+  }
+  .sc-about {
+    @include mobile {
+      padding: 7.016rem 2.66rem 0;
+      overflow: hidden;
+    }
+  }
+  .sc-work {
+    @include mobile {
+      padding-top: 9.7rem;
+    }
+  }
+  .sc-eternos {
+    @include mobile {
+      padding: 9.7rem 2.5rem 0;
+      gap: 3.83rem;
+      width: 100%;
+    }
+  }
+  .sc-contact {
+    @include mobile {
+      margin-top: 5.33rem;
+    }
+  }
+}

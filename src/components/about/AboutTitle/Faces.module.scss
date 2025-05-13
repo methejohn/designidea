@@ -1,0 +1,81 @@
+@use '/src/styles/util/mixin' as *;
+
+.faces {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  div {
+    position: absolute;
+    cursor: grab;
+    user-select: none;
+    @include mobile {
+      cursor: unset;
+    }
+    img {
+      width: auto;
+      pointer-events: none;
+      height: 14rem;
+    }
+    &:first-child {
+      top: 0;
+      left: -5rem;
+      img {
+        transform: scaleX(0.7) rotate(-28.76deg);
+      }
+      @include mobile {
+        top: 25%;
+        left: -2rem;
+        img {
+          transform: scaleX(0.7) rotate(-10.87deg);
+        }
+      }
+    }
+    &:nth-child(2) {
+      top: 3rem;
+      right: -2rem;
+      img {
+        transform: scaleX(0.9) rotate(8.19deg);
+      }
+      @include mobile {
+        top: 15%;
+      }
+    }
+    &:nth-child(3) {
+      top: 40%;
+      left: 48%;
+      img {
+        transform: rotate(4.82deg);
+      }
+      @include mobile {
+        left: 55%;
+        img {
+          transform: rotate(-7.73deg);
+        }
+      }
+    }
+    &:nth-child(4) {
+      top: 75%;
+      img {
+        transform: rotate(4.82deg);
+      }
+      @include mobile {
+        top: 83%;
+        left: -2%;
+      }
+    }
+    &:last-child {
+      top: 80%;
+      right: -2rem;
+      img {
+        transform: scaleX(0.7) rotate(9.71deg);
+      }
+      @include mobile {
+        img {
+          transform: scaleX(0.7) rotate(4.24deg);
+        }
+      }
+    }
+  }
+}

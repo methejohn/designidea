@@ -1,0 +1,18 @@
+@use '/src/styles/util/mixin' as *;
+
+.groupMain {
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  @include mobile {
+    height: 100%;
+  }
+  .mainVid {
+    height: 100%;
+    video {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

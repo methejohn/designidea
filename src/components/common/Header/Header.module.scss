@@ -1,0 +1,101 @@
+@use '/src/styles/util/mixin' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 2.5rem;
+  padding-bottom: 1.42rem;
+  @include vw(padding-left, 100px);
+  @include vw(padding-right, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+  transition: transform 0.5s;
+  &.hidden {
+    transform: translateY(calc(-100% - 2.75rem));
+  }
+  &.invert {
+    h1 {
+      path {
+        fill: #000;
+      }
+    }
+    :global(.gnb) {
+      ul {
+        color: #000;
+        svg {
+          path {
+            fill: #000;
+          }
+        }
+      }
+    }
+    button {
+      path {
+        stroke: #000;
+      }
+    }
+  }
+  &:global(.mobile) {
+    h1 {
+      path {
+        fill: #fff;
+      }
+    }
+    :global(.gnb) {
+      ul {
+        color: #fff;
+        svg {
+          path {
+            fill: #fff;
+          }
+        }
+      }
+    }
+    button {
+      path {
+        stroke: #fff;
+      }
+    }
+  }
+  @include mobile {
+    padding: 2.66rem;
+    margin: 0;
+  }
+  h1 {
+    path {
+      fill: #fff;
+      transition: fill 0.5s;
+    }
+    @include mobile {
+      flex: unset;
+    }
+    a {
+      display: block;
+      width: 21.16rem;
+      height: auto;
+      svg {
+        width: 100%;
+        height: auto;
+        pointer-events: none;
+      }
+    }
+  }
+
+  button {
+    display: none;
+    @include mobile {
+      display: block;
+      svg {
+        width: 4rem;
+        height: auto;
+        path {
+          transition: stroke 0.5s;
+        }
+      }
+    }
+  }
+}

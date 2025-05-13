@@ -1,0 +1,25 @@
+@use '/src/styles/util/mixin' as *;
+
+.description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2.08rem;
+  color: #333;
+  p {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+    @include mobile {
+      font-size: 3rem;
+    }
+  }
+  .kr {
+    font-size: 1.66rem;
+    line-height: 1.5;
+    @include mobile {
+      font-size: 2.33rem;
+      line-height: 1.4;
+    }
+  }
+}

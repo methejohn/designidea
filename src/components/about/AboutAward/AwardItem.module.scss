@@ -1,0 +1,12 @@
+@use '/src/styles/util/mixin' as *;
+
+.awardItem {
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.93;
+  color: #333;
+  @include mobile {
+    font-size: 3rem;
+    line-height: 1.5;
+  }
+}

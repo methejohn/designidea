@@ -1,0 +1,14 @@
+@use '/src/styles/util/mixin' as *;
+
+.serviceList {
+  padding-right: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 5.83rem 4.33rem;
+  @include mobile {
+    padding-right: unset;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    gap: 4rem;
+  }
+}

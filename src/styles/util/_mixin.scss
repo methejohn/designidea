@@ -1,0 +1,16 @@
+@mixin vw($property, $value, $base-width: 1920px) {
+  $vw-value: calc($value / $base-width) * 100vw;
+  #{$property}: $vw-value;
+}
+
+@mixin mobile($mobile: 1000px) {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin mobile2($mobile2: 640px) {
+  @media (max-width: $mobile2) {
+    @content;
+  }
+}

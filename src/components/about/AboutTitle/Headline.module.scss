@@ -1,0 +1,33 @@
+@use '/src/styles/util/mixin' as *;
+.headline {
+  position: relative;
+  align-self: flex-start;
+  left: -18rem;
+  font-size: 15.65rem;
+  font-weight: 700;
+  white-space: nowrap;
+  line-height: 0.8;
+  display: flex;
+  will-change: transform;
+  animation: textAni 10s linear infinite;
+  @include mobile {
+    animation: unset;
+    left: unset;
+    font-size: 8.33rem;
+    line-height: 1.4;
+    white-space: unset;
+    text-align: center;
+    .animation {
+      display: none;
+    }
+  }
+}
+
+@keyframes textAni {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

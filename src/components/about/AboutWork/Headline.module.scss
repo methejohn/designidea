@@ -1,0 +1,17 @@
+@use '/src/styles/util/mixin' as *;
+
+.headlineArea {
+  padding: 8.33rem 0 9.58rem;
+  padding-top: 8.33rem;
+  border-top: 1px solid #000;
+  display: flex;
+  align-items: flex-start;
+  @include mobile {
+    flex-direction: column;
+    padding: 4rem 0;
+    gap: 4rem;
+  }
+  strong {
+    flex: 1;
+  }
+}

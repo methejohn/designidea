@@ -1,0 +1,16 @@
+@use '/src/styles/util/mixin' as *;
+
+.groupService {
+  display: flex;
+  padding: 8.33rem 0;
+  @include vw(margin-left, 100px);
+  @include vw(margin-right, 100px);
+  @include vw(gap, 340px);
+  border-top: 1px solid #000;
+  @include mobile {
+    margin: unset;
+    padding: 4rem 0;
+    flex-direction: column;
+    gap: 4rem;
+  }
+}

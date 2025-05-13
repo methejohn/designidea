@@ -1,0 +1,95 @@
+@use '/src/styles/util/mixin' as *;
+
+.groupBreaker {
+  position: relative;
+  margin: unset;
+  height: 100vh;
+  padding-top: 12.5rem;
+  @include mobile {
+    margin: 0;
+    padding: 8rem 0;
+    top: 0;
+    height: unset;
+    overflow: hidden;
+  }
+  .brickArea {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem 2.708vw;
+    padding: 0 10vw;
+    @include mobile {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(20, auto);
+      gap: 1.5rem 0;
+      padding: 0;
+    }
+  }
+  .paddle {
+    position: absolute;
+    left: 50%;
+    bottom: 6%;
+    transform: translateX(-50%);
+    background: #f55601;
+    width: 23.58rem;
+    height: 5.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    &::before,
+    &::after {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+    &::before {
+      left: -30%;
+      content: '<';
+    }
+    &::after {
+      right: -30%;
+      content: '>';
+    }
+    span {
+      color: #fff;
+      opacity: 1;
+      transition: opacity 0.2s;
+    }
+    &:global(.active) {
+      cursor: unset;
+      &::before,
+      &::after {
+        opacity: 0;
+      }
+      span {
+        opacity: 0;
+      }
+    }
+    @include mobile {
+      visibility: hidden;
+    }
+  }
+  .ball {
+    position: absolute;
+    top: 78%;
+    left: calc(50% - 2.86rem);
+    background: #fff;
+    width: 5.72rem;
+    height: 5.72rem;
+    border-radius: 50%;
+    border: 1px solid #000;
+    svg {
+      padding: 1.66rem 1.04rem;
+    }
+    @include mobile {
+      visibility: hidden;
+    }
+  }
+}

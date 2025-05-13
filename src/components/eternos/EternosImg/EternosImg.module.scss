@@ -1,0 +1,11 @@
+@use '/src/styles/util/mixin' as *;
+
+.groupBottom {
+  margin: 0 auto;
+  @include vw(width, 1140px);
+  padding: 10.16rem 0 6.66rem;
+  @include mobile {
+    width: unset;
+    padding: 4rem 0 0;
+  }
+}
