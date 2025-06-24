@@ -3,6 +3,11 @@
   #{$property}: $vw-value;
 }
 
+@mixin vh($property, $value, $base-height: 1080px) {
+  $vh-value: calc($value / $base-height) * 100vh;
+  #{$property}: $vh-value;
+}
+
 @mixin mobile($mobile: 1000px) {
   @media (max-width: $mobile) {
     @content;
@@ -11,6 +16,12 @@
 
 @mixin mobile2($mobile2: 640px) {
   @media (max-width: $mobile2) {
+    @content;
+  }
+}
+
+@mixin laptop($laptop: 700px) {
+  @media (max-height: $laptop) {
     @content;
   }
 }

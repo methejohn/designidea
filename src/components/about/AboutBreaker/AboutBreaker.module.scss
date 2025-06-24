@@ -1,10 +1,13 @@
-@use '/src/styles/util/mixin' as *;
+@use "/src/styles/util/mixin" as *;
 
 .groupBreaker {
   position: relative;
   margin: unset;
   height: 100vh;
   padding-top: 12.5rem;
+  @include laptop {
+    height: 110vh;
+  }
   @include mobile {
     margin: 0;
     padding: 8rem 0;
@@ -51,11 +54,11 @@
     }
     &::before {
       left: -30%;
-      content: '<';
+      content: "<";
     }
     &::after {
       right: -30%;
-      content: '>';
+      content: ">";
     }
     span {
       color: #fff;
@@ -90,6 +93,9 @@
     }
     @include mobile {
       visibility: hidden;
+    }
+    @include laptop {
+      top: 73%;
     }
   }
 }

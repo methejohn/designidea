@@ -1,8 +1,8 @@
-@use '/src/styles/util/mixin' as *;
+@use "/src/styles/util/mixin" as *;
 
 .workArea {
   position: relative;
-  height: 768px;
+  @include vh(height, 768px);
   aspect-ratio: 1.41/1;
   perspective: 100vw;
   margin: 0 auto;
